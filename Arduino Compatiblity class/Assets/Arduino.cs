@@ -40,20 +40,42 @@ public class Arduino : MonoBehaviour {
     {
         if(playerOne != null)
         {
-            float scale = Remap(int.Parse(values[0]), 0f, 1023f, 0f, scaleSize);
-            Vector3 newPosition1 = new Vector3(playerOne.transform.position.x,
-              scale, playerOne.transform.position.z);
+            //float scale = Remap(int.Parse(values[0]), 0f, 1023f, 0f, scaleSize);
+            //Vector3 newPosition1 = new Vector3(playerOne.transform.position.x,
+            //  scale, playerOne.transform.position.z);
 
-            playerOne.transform.position = newPosition1;
+            //playerOne.transform.position = newPosition1;
+
+            float p1TempValues = float.Parse(values[0]);
+
+            p1TempValues -= 10;
+
+            p1TempValues /= 3;
+
+            p1TempValues = 10 - p1TempValues;
+
+            playerOne.transform.position = new Vector3(playerOne.transform.position.x, p1TempValues, playerOne.transform.position.z);
+
         }
 
         if (playerTwo != null)
         {
-            float scale = Remap(int.Parse(values[1]), 0f, 1023f, 0f, scaleSize);
+            /*float scale = Remap(int.Parse(values[1]), 0f, 1023f, 0f, scaleSize);
             Vector3 newPosition2 = new Vector3(playerTwo.transform.position.x,
                 scale, playerTwo.transform.position.z);
 
-            playerTwo.transform.position = newPosition2;
+            playerTwo.transform.position = newPosition2;*/
+
+            float p1TempValues = float.Parse(values[1]);
+
+            p1TempValues -= 10;
+
+            p1TempValues /= 3;
+
+            p1TempValues = 10 - p1TempValues;
+
+            playerTwo.transform.position = new Vector3(playerTwo.transform.position.x, p1TempValues, playerTwo.transform.position.z);
+
 
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 600.25, y: -26.65}
+  m_AnchoredPosition: {x: 589.75, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588839189
@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 441.75, y: -26.65}
+  m_AnchoredPosition: {x: 431.25, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749897334
@@ -602,7 +602,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 1
 --- !u!1 &799534129
 GameObject:
@@ -1071,6 +1071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e801a352743034e9a4184ef97d1322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
+  commPort: 0
+  scaleSize: 10
 --- !u!1 &1661418688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 283.25, y: -26.65}
+  m_AnchoredPosition: {x: 272.75, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661418690
@@ -1245,7 +1249,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 1
 --- !u!1 &1934721781
 GameObject:
@@ -1279,7 +1283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 124.75, y: -26.65}
+  m_AnchoredPosition: {x: 114.25, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934721783

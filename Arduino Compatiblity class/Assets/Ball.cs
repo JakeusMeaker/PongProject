@@ -19,19 +19,19 @@ public class Ball : MonoBehaviour {
 		
 	}
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         rb.AddForce(new Vector3(rb.velocity.x, Random.Range(-2f, 2f), 0), 0);
-    }*/
+    }
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
 
             if(other.gameObject.tag == "paddle")
             {
                 
             }
-    }
+    }*/
 
 
 
