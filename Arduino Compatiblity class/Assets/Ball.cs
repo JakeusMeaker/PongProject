@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour {
 	void Start ()
     {       
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(new Vector3(speed, Random.Range(-0.9f, 0.9f), 0), ForceMode.Impulse);
+        
     }
 	
 	// Update is called once per frame
@@ -19,19 +19,18 @@ public class Ball : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        rb.AddForce(new Vector3(rb.velocity.x, Random.Range(-2f, 2f), 0), 0);
+        if(other.collider.tag == "paddle")
+        {
+            rb.AddForce(new Vector3(speed * Time.deltaTime, Random.Range(-2f, 2f), 0), 0);
+        }
     }
 
-    /*private void OnCollisionEnter(Collision other)
+    void Launch()
     {
-
-            if(other.gameObject.tag == "paddle")
-            {
-                
-            }
-    }*/
+        rb.AddForce(new Vector3(Random.Range(-speed, speed), Random.Range(-0.9f, 0.9f), 0), ForceMode.Impulse);
+    }
 
 
 

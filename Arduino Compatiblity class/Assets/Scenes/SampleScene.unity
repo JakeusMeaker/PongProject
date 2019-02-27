@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589.75, y: -26.65}
+  m_AnchoredPosition: {x: 695.75, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588839189
@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 431.25, y: -26.65}
+  m_AnchoredPosition: {x: 537.25, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749897334
@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 777797136}
   - component: {fileID: 777797135}
   - component: {fileID: 777797134}
-  - component: {fileID: 777797138}
   m_Layer: 0
   m_Name: Player1
   m_TagString: paddle
@@ -589,21 +588,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &777797138
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 777797133}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 1
 --- !u!1 &799534129
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOne: {fileID: 777797133}
   playerTwo: {fileID: 1793406607}
-  commPort: 5
+  commPort: 3
   scaleSize: 10
 --- !u!4 &1112852544
 Transform:
@@ -1107,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 272.75, y: -26.65}
+  m_AnchoredPosition: {x: 378.75, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661418690
@@ -1161,7 +1145,6 @@ GameObject:
   - component: {fileID: 1793406610}
   - component: {fileID: 1793406609}
   - component: {fileID: 1793406608}
-  - component: {fileID: 1793406612}
   m_Layer: 0
   m_Name: Player2
   m_TagString: paddle
@@ -1236,21 +1219,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1793406612
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1793406607}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 1
 --- !u!1 &1934721781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.25, y: -26.65}
+  m_AnchoredPosition: {x: 220.25, y: -26.65}
   m_SizeDelta: {x: 100, y: 53.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934721783
