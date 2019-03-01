@@ -18,6 +18,7 @@ public class Arduino : MonoBehaviour {
         serial = new SerialPort("\\\\.\\COM" + commPort, 9600);
         serial.ReadTimeout = 50;
         serial.Open();
+        Restart();
 	}
 	
 	// Update is called once per frame
@@ -99,7 +100,7 @@ public class Arduino : MonoBehaviour {
         }
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         serial.Close();
     }
@@ -108,5 +109,12 @@ public class Arduino : MonoBehaviour {
     {
         return ( value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
+
+    public void Restart()
+    {
+        WriteToArduino("r");
+
+    }
+    
 }
 

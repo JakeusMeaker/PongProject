@@ -4,32 +4,48 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float speed = 1f;
-    
+    private float speed = 10f;
+    int startSpeed = 10;
+    [SerializeField]
+    private Transform spawnPoint;
+
     Rigidbody rb;
+    [SerializeField] private float multiplier = 1.05f;
+
     //Use this for initialization
-	void Start ()
+    void Start ()
     {       
         rb = GetComponent<Rigidbody>();
-        
+        Launch();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     private void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "paddle")
         {
-            rb.AddForce(new Vector3(speed * Time.deltaTime, Random.Range(-2f, 2f), 0), 0);
-        }
-    }
+            float newSpeed = speed * multiplier;
+            rb.velocity = rb.velocity.normalized * newSpeed;
+            speed = newSpeed;
+        }        
+    }  
 
     void Launch()
     {
-        rb.AddForce(new Vector3(Random.Range(-speed, speed), Random.Range(-0.9f, 0.9f), 0), ForceMode.Impulse);
+        rb.velocity = Vector3.zero;
+        rb.AddForce(new Vector3(startSpeed, Random.Range(-3f, 3f), 0), ForceMode.Impulse);
+    }
+
+    public void Respawn()
+    {
+        this.gameObject.SetActive(false);
+        transform.position = spawnPoint.position;
+        this.gameObject.SetActive(true);
+        Launch();
     }
 
 
