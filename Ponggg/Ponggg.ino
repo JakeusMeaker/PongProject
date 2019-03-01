@@ -37,7 +37,6 @@ void loop() {
     if(incomingByte == 'b'){
       digitalWrite(plyr1Led2,HIGH);
       plyr1Wins = true;
-      PlayerWins();
     }
     if(incomingByte == 'c'){
       digitalWrite(plyr2Led1, HIGH);
@@ -46,6 +45,15 @@ void loop() {
       digitalWrite(plyr2Led2, HIGH);
       plyr2Wins = true;
       PlayerWins();
+    }
+    if(incomingByte == 'r'){
+      Reset();
+    }
+    if(incomingByte == 'w'){
+      PlayerWins();
+    }
+    if(incomingByte == 'o'){
+      Reset();
     }
   }
 }
@@ -60,40 +68,29 @@ void SendPositions(){
 }
 
 void PlayerWins(){
-  int i = 5;
-  
+   
   if(plyr1Wins){
     digitalWrite(plyr2Led1, LOW);
-    digitalWrite(plyr2Led2, LOW);
-    delay(500);
-    
-    while(i > 0){
-      digitalWrite(plyr1Led1, LOW);
-      digitalWrite(plyr1Led2, LOW);
-      delay(100);
-      digitalWrite(plyr1Led1, HIGH);
-      digitalWrite(plyr1Led2, HIGH);
-      i--;
-      Reset();
+    digitalWrite(plyr2Led2, LOW); 
+    digitalWrite(plyr1Led1, LOW);
+    digitalWrite(plyr1Led2, LOW);
+    delay(100);
+    digitalWrite(plyr1Led1, HIGH);
+    digitalWrite(plyr1Led2, HIGH);
     }        
-  }
+  
 
   if(plyr2Wins){
     digitalWrite(plyr1Led1, LOW);
-    digitalWrite(plyr1Led2, LOW);
-    delay(500);
-    
-    while(i > 0){
-      digitalWrite(plyr2Led1, LOW);
-      digitalWrite(plyr2Led2, LOW);
-      delay(100);
-      digitalWrite(plyr2Led1, HIGH);
-      digitalWrite(plyr2Led2, HIGH);
-      i--;
-    }
-    Reset();   
+    digitalWrite(plyr1Led2, LOW);    
+    digitalWrite(plyr2Led1, LOW);
+    digitalWrite(plyr2Led2, LOW);
+    delay(100);
+    digitalWrite(plyr2Led1, HIGH);
+    digitalWrite(plyr2Led2, HIGH);
+    }       
   }
-}
+
 
 void Reset(){
     digitalWrite(plyr1Led1, LOW);
