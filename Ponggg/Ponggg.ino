@@ -11,6 +11,7 @@ int plyr1Led2 = 5;
 int plyr2Led1 = 6;
 int plyr2Led2 = 9;
 
+
 bool plyr1Wins = false;
 bool plyr2Wins = false;
 
@@ -21,10 +22,13 @@ void setup() {
   pinMode(plyr1Led2, OUTPUT);
   pinMode(plyr2Led1, OUTPUT);
   pinMode(plyr2Led2, OUTPUT);
+ 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  
+
 
   if(Serial.available() > 0){
     incomingByte = Serial.read();
@@ -41,21 +45,28 @@ void loop() {
     if(incomingByte == 'c'){
       digitalWrite(plyr2Led1, HIGH);
     }
-    if(incomingByte == 'b'){
+    if(incomingByte == 'd'){
       digitalWrite(plyr2Led2, HIGH);
       plyr2Wins = true;
-      PlayerWins();
+      
     }
     if(incomingByte == 'r'){
       Reset();
     }
     if(incomingByte == 'w'){
-      PlayerWins();
+      Player1Wins();
     }
     if(incomingByte == 'o'){
       Reset();
     }
+    if(incomingByte == 'e'){
+      Player2Wins();
+    }
   }
+}
+
+void ResetButton(){
+  Serial.print('r');
 }
 
 void SendPositions(){
@@ -67,9 +78,7 @@ void SendPositions(){
   Serial.println(twoVal);
 }
 
-void PlayerWins(){
-   
-  if(plyr1Wins){
+void Player1Wins(){
     digitalWrite(plyr2Led1, LOW);
     digitalWrite(plyr2Led2, LOW); 
     digitalWrite(plyr1Led1, LOW);
@@ -80,7 +89,7 @@ void PlayerWins(){
     }        
   
 
-  if(plyr2Wins){
+void Player2Wins(){
     digitalWrite(plyr1Led1, LOW);
     digitalWrite(plyr1Led2, LOW);    
     digitalWrite(plyr2Led1, LOW);
@@ -89,7 +98,7 @@ void PlayerWins(){
     digitalWrite(plyr2Led1, HIGH);
     digitalWrite(plyr2Led2, HIGH);
     }       
-  }
+  
 
 
 void Reset(){
